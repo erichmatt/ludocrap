@@ -57,10 +57,19 @@ mneuron2=sim.send_motor_neuron(joint2a)
 mneuron3=sim.send_motor_neuron(joint3a)
 mneuron4=sim.send_motor_neuron(joint4a)
 
+mneuron5=sim.send_motor_neuron(joint1b)
+mneuron6=sim.send_motor_neuron(joint2b)
+mneuron7=sim.send_motor_neuron(joint3b)
+mneuron8=sim.send_motor_neuron(joint4b)
+
 fneuron1=sim.send_function_neuron(math.sin)
 fneuron2=sim.send_function_neuron(math.sin)
 fneuron3=sim.send_function_neuron(math.sin)
 fneuron4=sim.send_function_neuron(math.sin)
+fneuron5=sim.send_function_neuron(math.sin)
+fneuron6=sim.send_function_neuron(math.sin)
+fneuron7=sim.send_function_neuron(math.sin)
+fneuron8=sim.send_function_neuron(math.sin)
 
 sim.send_developing_synapse(fneuron1,mneuron1,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
                             start_time=0, end_time=1)
@@ -69,6 +78,15 @@ sim.send_developing_synapse(fneuron2,mneuron2,start_weight=random.randint(-100,1
 sim.send_developing_synapse(fneuron3,mneuron3,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
                             start_time=0, end_time=1)
 sim.send_developing_synapse(fneuron4,mneuron4,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
+                            start_time=0, end_time=1)
+
+sim.send_developing_synapse(fneuron5,mneuron5,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
+                            start_time=0, end_time=1)
+sim.send_developing_synapse(fneuron6,mneuron6,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
+                            start_time=0, end_time=1)
+sim.send_developing_synapse(fneuron7,mneuron7,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
+                            start_time=0, end_time=1)
+sim.send_developing_synapse(fneuron8,mneuron8,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
                             start_time=0, end_time=1)
 
 
