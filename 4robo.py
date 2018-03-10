@@ -3,8 +3,9 @@ sys.path.insert(0, '../..')
 
 import pyrosim
 import math
+import random
 
-sim = pyrosim.Simulator(play_paused=True,debug=True,eval_time=3000)
+sim = pyrosim.Simulator(play_paused=True,debug=True,eval_time=5000)
 
 body = sim.send_box(x=0,y=0,z=1,length=0.5,width=0.5,height=0.1)
 #green leg
@@ -51,11 +52,6 @@ sensor2=sim.send_touch_sensor(body_id=shin2)
 sensor3=sim.send_touch_sensor(body_id=shin3)
 sensor4=sim.send_touch_sensor(body_id=shin4)
 
-sneuron1=sim.send_sensor_neuron(sensor1)
-sneuron2=sim.send_sensor_neuron(sensor2)
-sneuron3=sim.send_sensor_neuron(sensor3)
-sneuron4=sim.send_sensor_neuron(sensor4)
-
 mneuron1=sim.send_motor_neuron(joint1a)
 mneuron2=sim.send_motor_neuron(joint2a)
 mneuron3=sim.send_motor_neuron(joint3a)
@@ -66,13 +62,13 @@ fneuron2=sim.send_function_neuron(math.sin)
 fneuron3=sim.send_function_neuron(math.sin)
 fneuron4=sim.send_function_neuron(math.sin)
 
-sim.send_developing_synapse(fneuron1,mneuron1,start_weight=-10,end_weight=10,
+sim.send_developing_synapse(fneuron1,mneuron1,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
                             start_time=0, end_time=1)
-sim.send_developing_synapse(fneuron2,mneuron2,start_weight=10,end_weight=-10,
+sim.send_developing_synapse(fneuron2,mneuron2,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
                             start_time=0, end_time=1)
-sim.send_developing_synapse(fneuron3,mneuron3,start_weight=10,end_weight=-10,
+sim.send_developing_synapse(fneuron3,mneuron3,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
                             start_time=0, end_time=1)
-sim.send_developing_synapse(fneuron4,mneuron4,start_weight=-10,end_weight=10,
+sim.send_developing_synapse(fneuron4,mneuron4,start_weight=random.randint(-100,100),end_weight=random.randint(-100,100),
                             start_time=0, end_time=1)
 
 
